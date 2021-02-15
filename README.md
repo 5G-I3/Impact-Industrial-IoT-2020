@@ -6,6 +6,13 @@ The applications to reproduce our comparative evaluations run on the [RIOT](http
 The [RIOT tutorials](https://github.com/RIOT-OS/Tutorials) provides a setup guide for installing the necessary toolchains.
 More information on how to compile an application for RIOT and on how to flash the resulting binary on real hardware is summarized in the [The Quickest Start](https://doc.riot-os.org/index.html#the-quickest-start) and the [Getting Started](https://doc.riot-os.org/getting-started.html).
 
+The experiments are designed to run on the [FIT IoT-Lab testbed](https://www.iot-lab.info/).
+All protocol deployments use the [IoT-Lab M3](https://www.iot-lab.info/docs/boards/iot-lab-m3/) board.
+Configurations that make use of a 6Lo border router to interact with a Linux backend further use an [IoT-Lab A8](https://www.iot-lab.info/docs/boards/iot-lab-a8-m3/) device as the gateway node.
+This applies to these deployments: MQTT-SN, CoAP OBS, and CoAP PUT.
+
+More information on the `m3` nodes sum up [here](https://doc.riot-os.org/group__boards__iotlab-m3.html), [here](https://iot-lab.github.io/docs/boards/iot-lab-m3/) and for the `a8` nodes [here](https://iot-lab.github.io/docs/boards/iot-lab-a8-m3/).
+
 ## Code
 The explicit RIOT version is included as a submodule in this repository.
 The `apps` folder contains the RIOT and CCN-lite applications that we used to perform our experiments.
