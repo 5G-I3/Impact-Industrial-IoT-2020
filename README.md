@@ -18,3 +18,35 @@ Follow [this guide](https://www.iot-lab.info/legacy/tutorials/getting-started-tu
 ## Code
 The explicit RIOT version is included as a submodule in this repository.
 The `apps` folder contains the RIOT and CCN-lite applications that we used to perform our experiments.
+
+## Compile Applications
+Application code for each deployment resides in the `apps` directory.
+The necessary RIOT version is included as a git submodule.
+This repository needs to be clonsed recursively with:
+
+```
+git clone --recursive https://github.com/5G-I3/Impact-Industrial-IoT-2020
+```
+
+If this `RIOT submodule` is empty, then update the submodule.
+From the root of this repository, run:
+
+```
+git submodule update --init
+```
+
+To compile a particular application, we first change the directory (e.g., for the `coap_get_cli_unsch` app):
+
+```
+cd apps/coap_get_cli_unsch
+```
+
+and then compile for the `m3` board using the following command:
+
+```
+BOARD=iotlab-m3 make all
+```
+
+This generates the binary files `bin/coap_get_cli_unsch.[bin,elf]`, which can then be flashed on the testbed nodes following the step-wise testbed guide.
+
+Some applications may also work with the RIOT [native](https://github.com/RIOT-OS/RIOT/wiki/Family%3A-native) board, which technically is a Linux process and allows for a quick, iterative test and develop cycle.
